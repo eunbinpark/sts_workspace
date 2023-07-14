@@ -1,0 +1,48 @@
+package bitedu.bipa.test.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import bitedu.bipa.test.dao.BookDao;
+
+@Service("BookService")
+public class BookService {
+
+	@Autowired
+	private BookDao bookDao;
+
+	//Create
+	public boolean registeBook() {
+		boolean flag = false;
+		
+		return flag;
+	}
+	
+	//ReadAll
+	public boolean searchAllBook() {
+		boolean flag = false;
+		
+		return flag;
+	}
+
+	//ReadOne
+	public boolean findBook() {
+		boolean flag = false;
+		
+		return flag;
+	}
+
+	//Delete
+	public boolean removeBook() {
+		boolean flag = false;
+		
+		return flag;
+	}
+
+	//Update
+	public boolean modifyBook() {
+		boolean flag = false;
+		
+		return flag;
+	}
+}

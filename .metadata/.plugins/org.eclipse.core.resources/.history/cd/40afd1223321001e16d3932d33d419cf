@@ -1,0 +1,5 @@
+package bitedu.bipa.test.utils;
+
+public class ConnectionManager {
+
+}

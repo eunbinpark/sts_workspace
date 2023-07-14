@@ -1,0 +1,33 @@
+package bitedu.bipa.test.dao;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import bitedu.bipa.test.vo.BookVo;
+
+@Repository("BookDao")
+public class BookDao {
+
+//	@Autowired
+//	private SqlSession sqlSession;
+	
+	//Create
+	public boolean insertBook(BookVo book) {
+		boolean flag = false;
+		
+		return flag;
+	}
+	
+	//ReadAll
+	public ArrayList<BookVo> selectAllBook() {
+		
+	}
+	
+	//ReadOne
+	
+	//Update
+	
+	//Delete
+}

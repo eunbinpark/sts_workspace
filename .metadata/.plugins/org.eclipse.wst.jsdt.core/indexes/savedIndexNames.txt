@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\eunbin\BitStudy\program\sts-bundle\sts_workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+890794816.index
+969968605.index
+1557066167.index
+1407937730.index
+3369627898.index
+1423792724.index

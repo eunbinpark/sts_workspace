@@ -1,0 +1,71 @@
+package bitedu.bipa.book.service;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import bitedu.bipa.book.vo.BookCopy;
+import bitedu.bipa.member.dao.BookDAO;
+
+
+
+@Service("quizService")
+public class QuizService {
+
+	private ArrayList<BookCopy> list;
+	
+	
+	
+	public boolean checkId(String id) {
+		boolean flag = false;
+		if(id.equals("admin")) {
+			flag = true;
+		}
+		return flag;
+	}
+	
+	public boolean registBook(BookCopy copy) {
+		boolean flag = false;
+		BookDAO bd = new BookDAO();
+//		copy.setPublishDate(Timestamp.valueOf(copy.getPublishDate()+" 00:00:00.0"));
+		
+		flag = bd.insertBook(copy);
+	
+		flag = true;
+		
+		return flag;
+	}
+	
+	public ArrayList<BookCopy> searchBookAll(){
+		BookDAO bd = new BookDAO();
+		ArrayList<BookCopy> copy = bd.selectBookAll();
+
+		return copy;
+
+	}
+	
+	public boolean removeBook(String bookSeq, String bookIsbn) {
+		// TODO Auto-generated method stub
+		BookDAO bd = new BookDAO();
+		boolean flag = false;
+		flag = bd.deleteBook(bookSeq,bookIsbn);
+		return flag;
+	}
+	public BookCopy findBook(String bookSeq) {
+		BookCopy copy = null;
+		BookDAO bd = new BookDAO();
+		copy=bd.selectBook(bookSeq);
+		return copy;
+	}
+	public boolean modifyBook(BookCopy copy) {
+		// TODO Auto-generated method stub
+		boolean flag = false;
+		BookDAO bd = new BookDAO();
+
+		copy.setPublishDate(Timestamp.valueOf(copy.getPublishDate()+" 00:00:00.0"));
+		
+		flag = bd.updateBook(copy);
+		return flag;
+	}
+}
