@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.board"> 
+	<!----> 
+	<resultMap id="boardResult" type="BoardVO">
+		<result property="seq" column="seq" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <result property="writer" column="writer" />
+        <result property="readCount" column="read_count" />
+        <result property="createDate" column="create_date" />
+        <result property="attatchImg" column="attatch_img" />
+        <result property="attatchData" column="attatch_data" />
+	</resultMap>  
+
+	<select id="selectBoardList" resultMap="boardResult" resultType="java.util.ArrayList">
+      <![CDATA[
+         select * from simple_board order by create_date desc	 	
+      ]]>
+	</select>
+	<select id="findBoard" resultMap="boardResult"  resultType="boardVO"  parameterType="java.lang.Integer" >
+      <![CDATA[
+         select * from simple_board
+         where
+         seq=#{seq}		
+      ]]>
+  </select>	
+ 
+	 <insert id="insertBoard" parameterType="boardVO">
+		<![CDATA[
+		 insert into simple_board(title,content, writer, create_date,attatch_img,attatch_data) 
+		 values(#{title}, #{content}, #{writer}, #{createDate}, #{attatchImg}, #{attatchData})
+		]]>      
+	</insert>
+	
+	<update id="updateBoard"  parameterType="boardVO">
+     <![CDATA[
+	     update simple_board
+	     set title=#{title}, content=#{content}, writer=#{writer}
+	     where
+	     seq=#{seq}
+      ]]>      
+   </update> 
+   <update id="updateCounter"  parameterType="java.lang.Integer">
+     <![CDATA[
+	     update simple_board
+	     set read_count = read_count + 1
+	     where
+	     seq=#{seq}
+      ]]>      
+   </update> 
+   <delete id="deleteBoard"  parameterType="java.lang.Integer">
+	<![CDATA[
+	   delete from  simple_board
+	   where
+	   seq=#{seq}
+	]]>      
+  </delete>
+ </mapper>

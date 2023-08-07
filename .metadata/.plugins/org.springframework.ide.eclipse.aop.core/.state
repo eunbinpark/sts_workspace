@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="tiles_quiz"/>
+<aop-project name="sample"/>
+<aop-project name="test_practice"/>
 <aop-project name="Test0713"/>
 </aop-reference-model>
