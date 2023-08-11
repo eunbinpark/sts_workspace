@@ -4,4 +4,5 @@
 <aop-project name="sample"/>
 <aop-project name="test_practice"/>
 <aop-project name="Test0713"/>
+<aop-project name="tilesPEB"/>
 </aop-reference-model>
